@@ -9,7 +9,9 @@
 
   (with-temp-message ""              ;抹掉插件启动的输出
     (require 'init-generic)
+    (require 'init-utils)
     (require 'init-package-install)
+    (require 'init-key)
     (require 'init-mode)
     (require 'init-themes)
     (require 'init-selectrum)
