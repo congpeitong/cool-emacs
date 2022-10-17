@@ -1,4 +1,4 @@
-(add-to-list 'load-path (expand-file-name (concat *emacs-extension-dir* "/awesome-pair")))
+(add-to-list 'load-path (concat *emacs-extension-dir* "/awesome-pair"))
 
 (require 'awesome-pair)
 (dolist (hook (list
