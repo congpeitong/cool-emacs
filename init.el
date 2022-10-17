@@ -11,6 +11,7 @@
     (require 'init-generic)
     (require 'init-utils)
     (require 'init-package-install)
+    (require 'init-dashboard)
     (require 'init-key)
     (require 'init-mode)
     (require 'init-themes)

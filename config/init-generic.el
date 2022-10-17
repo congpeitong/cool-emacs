@@ -1,6 +1,6 @@
 ;; Restore emacs session.
 (setq initial-buffer-choice t)
-(run-with-timer 1 nil #'(lambda () (bury-buffer)))
+;(run-with-timer 1 nil #'(lambda () (bury-buffer)))  ;; 此处配置会导致message为首页buffer,暂时注销
 
 ;; 增加长行处理性能
 (setq bidi-inhibit-bpa t)
