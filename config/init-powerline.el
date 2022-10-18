@@ -8,13 +8,13 @@
 ;;(powerline-nano-theme)
 
 
-;; ==============spaceLine 状态栏===================
-;;(require-package 'spaceline)
-;;(require 'spaceline-config) ;; 不知道是否还需要暂时先留着
-;;(spaceline-emacs-theme)
-;;(setq winum-auto-setup-mode-line nil)
-;;(require-package 'winum)
-;;(winum-mode)
+;; ==============spaceLine 状态栏 启动时间占用太长===================
+; (use-package spaceline)
+; ;(require 'spaceline-config) ;; 不知道是否还需要暂时先留着
+; (spaceline-emacs-theme)
+; (setq winum-auto-setup-mode-line nil)
+; (require-package 'winum)
+; (winum-mode)
 
 
 ;;(spaceline-spacemacs-theme)

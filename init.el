@@ -9,6 +9,7 @@
 
   (with-temp-message ""              ;抹掉插件启动的输出
     (require 'init-generic)
+    (require 'init-time)
     (require 'init-utils)
     (require 'init-work-util)
     (require 'init-package-install)
