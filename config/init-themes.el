@@ -1,6 +1,8 @@
 ;;============= spacemacs =================主题
-(use-package spacemacs-theme)
-(load-theme 'spacemacs-dark t) ;; 暗色主题
+(use-package spacemacs-theme
+ :ensure t
+ :init
+ (load-theme 'spacemacs-dark t))
 
 ;;============= lazycat ===================主题
 

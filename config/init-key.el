@@ -1,5 +1,7 @@
-(use-package which-key)
-(which-key-mode)
+(use-package which-key
+ :ensure t
+ :init
+ (which-key-mode))
 
 
 
