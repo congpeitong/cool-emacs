@@ -13,6 +13,11 @@
 (defconst *emacs-extension-dir* (concat *emacs-root-dir* "/extensions")) ;; 扩展文件目录
 (defconst *emacs-package-user-dir* (expand-file-name (format "emacs-package-%s.%s" emacs-major-version emacs-minor-version)
                         user-emacs-directory))
+
+(defconst *win-open-root-dir*
+  (if *is-windows*
+      "e:/work_open_source/work_record")
+  nil)
 ;;==================================================================
 
 

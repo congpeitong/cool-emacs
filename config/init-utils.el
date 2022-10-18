@@ -31,7 +31,7 @@
     result))
 
 ;; Delete the current file
-(defun delete-this-file ()
+(defun cong-delete-this-file ()
   "Delete the current file, and kill the buffer."
   (interactive)
   (unless (buffer-file-name)
@@ -42,7 +42,7 @@
     (kill-this-buffer)))
 
 ;; Rename the current file
-(defun rename-this-file-and-buffer (new-name)
+(defun cong-rename-this-file-and-buffer (new-name)
   "Renames both current buffer and file it's visiting to NEW-NAME."
   (interactive "sNew name: ")
   (let ((name (buffer-name))
@@ -57,7 +57,7 @@
 
 
 ;; Browse current HTML file
-(defun browse-current-file ()
+(defun cong-browse-current-file ()
   "Open the current file as a URL using `browse-url'."
   (interactive)
   (let ((file-name (buffer-file-name)))
@@ -66,6 +66,11 @@
         (error "Cannot open tramp file")
       (browse-url (concat "file://" file-name)))))
 
+;; Open emacs init document
+(defun cong-open-emacs-init-file ()
+  "Open emacs init document"
+  (interactive)
+  (find-file "~/.emacs.d/init.el"))
 
 (provide 'init-utils)
 ;;; init-utils.el ends here

@@ -12,8 +12,7 @@
   (setq dashboard-item-names '(("Recent Files:" . "Recently opened files:")
                              ("Agenda for today:" . "Today's agenda:")
                              ("Agenda for the coming week:" . "Agenda:")))
-  (dashboard-setup-startup-hook)
-  :config)
+  (dashboard-setup-startup-hook))
 
 
 (provide 'init-dashboard)
