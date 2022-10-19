@@ -7,7 +7,7 @@
       ;; 清空避免加载远程文件的时候分析文件。
       (file-name-handler-alist nil))
 
-  (with-temp-message ""              ;抹掉插件启动的输出
+  (with-temp-message "Emas Started"              ;抹掉插件启动的输出
     (require 'init-generic)
     (require 'init-time)
     (require 'init-utils)
@@ -21,16 +21,18 @@
     (require 'init-powerline)
 
     ;; 可以延后加载的
-    (run-with-idle-timer
-     1 nil
+    (run-with-idle-timer ;; 定时任务函数 (run-with-timer SECS:时间间隔，以秒为单位  REPEAT：是否非nil,非nil则每间隔REPEAT执行一次  FUNCTION &rest ARGS)
+     3 nil
      #'(lambda ()
          (require 'init-line-number)
          (require 'init-indent)
          (require 'init-auto-save)
          (require 'init-pair)
+         (require 'init-undo)
          (require 'init-org)
          (require 'init-complete)
+         (require 'init-flycheck)
+         (require 'init-tree-dir)
          ))))
 
 (provide 'init)
-

@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 ;; ===============powerLine状态栏=======================
 ;;(require-package 'powerline)
 ;;(setq powerline-default-separator 'wave)

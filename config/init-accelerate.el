@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 ;; 加速启动
 (setq
  ;; 不要缩放frame.

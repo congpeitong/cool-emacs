@@ -1,4 +1,4 @@
-
+;;; -*- lexical-binding: t; -*-
 (use-package selectrum
  :ensure t
  :init

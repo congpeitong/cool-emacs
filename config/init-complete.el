@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 ;; 补全提示
 (add-to-list 'load-path (concat *emacs-extension-dir* "/lsp-bridge"))
 (require-package 'posframe)

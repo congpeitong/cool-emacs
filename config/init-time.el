@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 ;;; init-time.el --- 时间设置
 
 

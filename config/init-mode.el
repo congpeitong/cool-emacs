@@ -1,4 +1,4 @@
-
+;;; -*- lexical-binding: t; -*-
 ;;; ### auto-mode-alist ###
 ;;; --- 绑定扩展名到特定的模式
 (defun add-to-alist (alist-var elt-cons &optional no-replace)

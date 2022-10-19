@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 (use-package auto-save
   :load-path "~/.emacs.d/config/extensions/auto-save"
   :init

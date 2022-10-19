@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 ;; this is package manager document
 (require 'package)
 

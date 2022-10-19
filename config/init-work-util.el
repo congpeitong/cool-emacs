@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 ;; 打开工作日志文件
 (defun cong-open-work-record-dir ()
   (interactive)

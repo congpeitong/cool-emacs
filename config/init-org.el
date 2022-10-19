@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 (setq org-todo-keywords
       (quote (
               (sequence "TODO(t)" "NEXT(n)" "|" "DONE(d!/!)")
