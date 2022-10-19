@@ -1,7 +1,6 @@
 ;;; -*- lexical-binding: t; -*-
 ;;============= spacemacs =================主题
 (use-package spacemacs-theme
-  :disabled nil
   :ensure t
   :init
   (load-theme 'spacemacs-dark t))
@@ -10,6 +9,6 @@
 
 (add-to-list 'load-path "~/.emacs.d/config/extensions/lazycat-theme")
 (require 'lazycat-theme)
-(load-theme 'lazycat-dark t)
+;(load-theme 'lazycat-dark t)
 
 (provide 'init-themes)
