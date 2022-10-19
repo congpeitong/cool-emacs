@@ -8,6 +8,7 @@
       (file-name-handler-alist nil))
 
   (with-temp-message ""              ;抹掉插件启动的输出
+    (require 'init-unicode)
     (require 'init-generic)
     (require 'init-time)
     (require 'init-utils)
