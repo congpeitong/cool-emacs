@@ -1,3 +1,10 @@
+;;; init-unicode.el --- load the unicode configuration -*- lexical-binding: t -*-
+;;; Commentary:
+
+;; This file bootstrap the configuration, which is encode
+
+;;; Code:
+
 ;;------------设置(utf-8)模式------------
 ;;(set-language-environment 'Chinese-GB)
 ;;(set-language-environment 'utf-8)
@@ -46,3 +53,5 @@
 
 
 (provide 'init-unicode)
+
+;;; init-unicode.el ends here

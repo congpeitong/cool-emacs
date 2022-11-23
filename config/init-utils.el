@@ -65,13 +65,48 @@
     (if (and (fboundp 'tramp-tramp-file-p)
              (tramp-tramp-file-p file-name))
         (error "Cannot open tramp file")
-      (browse-url (concat "file://" file-name)))))
+      (browse-url (concat "e:/my_source_code/congpeitong.github.io" file-name)))))
+
+
+
+(defun zilongshanren//insert-org-or-md-img-link (prefix imagename)
+  (if (equal (file-name-extension (buffer-file-name)) "org")
+      (insert (format "[[%s%s]]" prefix imagename))
+    (insert (format "![%s](%s%s)" imagename prefix imagename))))
+
+(defun zilongshanren/capture-screenshot (basename)
+  "Take a screenshot into a time stamped unique-named file in the
+  same directory as the org-buffer/markdown-buffer and insert a link to this file."
+  (interactive "sScreenshot name: ")
+  (if (equal basename "")
+      (setq basename (format-time-string "%Y%m%d_%H%M%S")))
+  (progn
+    (setq final-image-full-path (concat basename ".png"))
+    (call-process "screencapture" nil nil nil "-s" final-image-full-path)
+    (if (executable-find "convert")
+        (progn
+          (setq resize-command-str (format "convert %s -resize 800x600 %s" final-image-full-path final-image-full-path))
+          (shell-command-to-string resize-command-str)))
+    (zilongshanren//insert-org-or-md-img-link "./" (concat basename ".png")))
+  (insert "\n"))
+
+
+
+
+
 
 ;; Open emacs init document
 (defun cong-open-emacs-init-file ()
   "Open emacs init document"
   (interactive)
   (find-file "~/.emacs.d/init.el"))
+;; Open all-blog document
+(defun cong-open-blog-file ()
+  "Open Blog FILE"
+  (interactive)
+  (find-file "~/.emacs.d/all-blog.org"))
+
+
 
 (provide 'init-utils)
 ;;; init-utils.el ends here

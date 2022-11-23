@@ -1,3 +1,10 @@
+;;; init.el --- load the full configuration -*- lexical-binding: t -*-
+;;; Commentary:
+
+;; This file bootstrap the configuration, which is divided into a number of other files
+
+;;; Code:
+
 (add-to-list 'load-path (expand-file-name *emacs-root-dir* user-emacs-directory))  ;; 设置配置文件主目录
 (require 'init-accelerate) ;; 加速配置
 (let (
@@ -34,6 +41,8 @@
          (require 'init-complete)
          (require 'init-flycheck)
          (require 'init-tree-dir)
+         (require 'init-hugo)
+         (require 'init-git)
          ))))
 
 (provide 'init)

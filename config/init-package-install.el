@@ -9,7 +9,8 @@
 ;; Internet repositories for new packages.
 (setq package-archives '(("gnu"    . "http://elpa.gnu.org/packages/")
                          ("nongnu" . "https://elpa.nongnu.org/nongnu/")
-                         ("melpa"  . "http://melpa.org/packages/")))
+                         ("melpa"  . "http://melpa.org/packages/")
+                         ("melpa-stable" . "http://stable.melpa.org/packages/")))
 
 ;; Initialize packages
 (unless (bound-and-true-p package--initialized) ; To avoid warnings in 27
@@ -17,6 +18,7 @@
   (package-initialize))
 
 ;; ================ Setup use-package start ===========================
+
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
   (package-install 'use-package))
@@ -72,3 +74,5 @@ locate PACKAGE."
 
 
 (provide 'init-package-install)
+
+;;; init-package-install.el ends here

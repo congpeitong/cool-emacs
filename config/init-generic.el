@@ -1,4 +1,10 @@
-;;; -*- lexical-binding: t; -*-
+;;; init-generic.el --- load the generic configuration -*- lexical-binding: t -*-
+;;; Commentary:
+
+;; This file boostrap the configuration , which is generic
+
+;;; Code:
+
 ;; Restore emacs session.
 (setq initial-buffer-choice t)
 ;(run-with-timer 1 nil #'(lambda () (bury-buffer)))  ;; 此处配置会导致message为首页buffer,暂时注销
@@ -115,3 +121,4 @@ from tradition chinese to simple chinese" t)
 (tooltip-mode -1)                       ;不要显示任何 tooltips
 
 (provide 'init-generic)
+;;; init-generic.el ends here

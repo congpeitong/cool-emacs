@@ -1,5 +1,10 @@
-;;; -*- lexical-binding: t; -*-
-;; 加速启动
+;;; init-accelerate.el --- load the accelerate configuration -*- lexical-binding: t; -*-
+;;; commentary:
+
+;; This file bootstrap the configuration, which is accelerate start
+
+;;; Code:
+
 (setq
  ;; 不要缩放frame.
  frame-inhibit-implied-resize t
@@ -7,6 +12,8 @@
  initial-major-mode 'fundamental-mode
  ;; 不要自动启用package
  package-enable-at-startup nil
- package--init-file-ensured t)
+ package-init-file-ensured 0)
 
 (provide 'init-accelerate)
+
+;;; init-accelerate.el ends here

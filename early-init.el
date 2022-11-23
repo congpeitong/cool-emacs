@@ -14,10 +14,15 @@
 (defconst *emacs-package-user-dir* (expand-file-name (format "emacs-package-%s.%s" emacs-major-version emacs-minor-version)
                         user-emacs-directory))
 
+;; 工作记录目录
 (defconst *win-open-root-dir*
   (if *is-windows*
       "e:/work_open_source/work_record")
   nil)
+
+;; ox-hugo 本地网站根目录
+(defconst *org-hugo-base-dir* "E:/my_source_code/congpeitong.github.io")
+
 ;;==================================================================
 
 
