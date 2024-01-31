@@ -1,22 +1,28 @@
 
 ;; 美化modeline
-;;(use-package doom-modeline
-;;  :ensure t
-;;  :config
-;;  (setq doom-modeline-modal-icon t)
-;;  :hook
-;;  (after-init . doom-modeline-mode))
 
-(use-package powerline
+(use-package spaceline
   :ensure t
-  :config
-  (setq-default mode-line-format '("%e" (:eval (powerline-raw "%l" 'mode-line 'local))))
-  (setq powerline-right-separator 'arrow)
-  (setq powerline-left-separator 'arrow)
-  (setq powerline-display-buffer-size nil)
-  (setq powerline-display-mule-info nil)
-  (setq powerline-display-hud nil)
-  (powerline-default-theme))
+  :init
+  (require 'spaceline-config)
+  (spaceline-emacs-theme)
+  (setq powerline-default-separator 'arrow)
+  (setq powerline-height 24)
+  (setq spaceline-highlight-face-func 'spaceline-highlight-face-evil-state)
+  (setq spaceline-buffer-encoding-abbrev-table '((unix . "UTF-8")
+                                                (dos . "DOS")
+                                                (mac . "Mac")))
+  (setq spaceline-workspace-numbers-unicode t)
+  (setq spaceline-all-the-icons-separator-type 'arrow)
+  (setq spaceline-all-the-icons-iconset 'alltheicons)
+  (setq spaceline-all-the-icons-scale-factor 1.0)
+  (setq spaceline-all-the-icons-color-icons nil)
+  (setq spaceline-all-the-icons-whole-icons nil)
+  (setq spaceline-all-the-icons-alternate-styles nil)
+  (setq spaceline-all-the-icons-excluded-names '("*NeoTree*" "*Projectile*" "*magit*"))
+  (setq spaceline-all-the-icons-included-packages '(all-the-icons))
+  )
+
 
 
 (provide 'init-modeline)
