@@ -12,6 +12,7 @@
   (setq spaceline-buffer-encoding-abbrev-table '((unix . "UTF-8")
                                                 (dos . "DOS")
                                                 (mac . "Mac")))
+  (setq spaceline-exclude-package '(flycheck company-box company))
   (setq spaceline-workspace-numbers-unicode t)
   (setq spaceline-all-the-icons-separator-type 'arrow)
   (setq spaceline-all-the-icons-iconset 'alltheicons)

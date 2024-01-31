@@ -46,18 +46,16 @@
 ;; yaml
 (require 'init-yaml)
 ;; selectrum
-(require 'init-selectrum)
+;;(require 'init-selectrum)
+(require 'init-interactive)
 ;; 语法检查
 (require 'init-flycheck)
 ;; magit
 (require 'init-magit)
-
-
-
-
-
-
-
+;; tree-dir
+(require 'init-tree-dir)
+;; undo
+(require 'init-undo)
 
 (provide 'init)
 ;;; init.el ends here
