@@ -1,49 +1,63 @@
-;;; init.el --- load the full configuration -*- lexical-binding: t -*-
-;;; Commentary:
+;;; 配置文件的主目录
+(add-to-list 'load-path (expand-file-name *emacs-config-dir* user-emacs-directory))
 
-;; This file bootstrap the configuration, which is divided into a number of other files
+;; 加速配置
+(require 'init-accelerate)
+;; 常量配置
+(require 'init-const) 
+;; 常用的方法/函数
+(require 'init-method)
+;; 包安装
+(require 'init-package-install)
+;; 基础配置
+(require 'init-base)
+;; generic
+(require 'init-generic)
+;; dashboard
+(require 'init-dashboard)
+;; 主题
+(require 'init-theme)
+;; 图标
+(require 'init-icon)
+;; 时间
+(require 'init-time)
+;; 编码
+(require 'init-unicode)
+;; 行号
+(require 'init-line-number)
+;; modeline
+(require 'init-modeline)
+;; 补全
+(require 'init-complete)
+;; 滚动
+(require 'init-scroll)
+;; window增强
+(require 'init-window)
+;; 括号匹配
+(require 'init-pair)
+;; avy
+;;(require 'init-avy)
+;; web
+(require 'init-web)
+;; Vue
+(require 'init-vue)
+;; markdown
+(require 'init-markdown)
+;; yaml
+(require 'init-yaml)
+;; selectrum
+(require 'init-selectrum)
+;; 语法检查
+(require 'init-flycheck)
+;; magit
+(require 'init-magit)
 
-;;; Code:
 
-(add-to-list 'load-path (expand-file-name *emacs-root-dir* user-emacs-directory))  ;; 设置配置文件主目录
-(require 'init-accelerate) ;; 加速配置
-(let (
-      ;; 加载的时候临时增大`gc-cons-threshold'以加速启动速度。
-      (gc-cons-threshold most-positive-fixnum)
-      (gc-cons-percentage 0.6)
-      ;; 清空避免加载远程文件的时候分析文件。
-      (file-name-handler-alist nil))
 
-  (with-temp-message ""              ;抹掉插件启动的输出
-    (require 'init-unicode)
-    (require 'init-generic)
-    (require 'init-time)
-    (require 'init-utils)
-    (require 'init-work-util)
-    (require 'init-package-install)
-    (require 'init-dashboard)
-    (require 'init-key)
-    ;;(require 'init-mode)
-    (require 'init-themes)
-    (require 'init-selectrum)
-    (require 'init-powerline)
 
-    ;; 可以延后加载的
-    (run-with-idle-timer ;; 定时任务函数 (run-with-timer SECS:时间间隔，以秒为单位  REPEAT：是否非nil,非nil则每间隔REPEAT执行一次  FUNCTION &rest ARGS)
-     1.5 nil
-     #'(lambda ()
-         (require 'init-line-number)
-         (require 'init-indent)
-         (require 'init-auto-save)
-         (require 'init-pair)
-         (require 'init-undo)
-         (require 'init-org)
-         (require 'init-complete)
-         (require 'init-flycheck)
-         (require 'init-tree-dir)
-         (require 'init-hugo)
-         (require 'init-git)
-         ))))
+
+
+
 
 (provide 'init)
 ;;; init.el ends here
