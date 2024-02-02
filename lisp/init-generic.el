@@ -1,6 +1,39 @@
+;;; init-generic.el --- summary -*- lexical-binding: t -*-
+
+;; Author: kylinbachelor
+;; Maintainer: None
+;; Version: 1.0
+;; Package-Requires: (dependencies)
+;; Homepage: homepage
+;; Keywords: keywords
+
+
+;; This file is not part of GNU Emacs
+
+;; This program is free software: you can redistribute it and/or modify
+;; it under the terms of the GNU General Public License as published by
+;; the Free Software Foundation, either version 3 of the License, or
+;; (at your option) any later version.
+
+;; This program is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+;; GNU General Public License for more details.
+
+;; You should have received a copy of the GNU General Public License
+;; along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+
+;;; Commentary:
+
+;; 基础配置
+
+;;; Code:
+
+(message "Welcome to init-generic!")
+
 ;; Restore emacs session.
 (setq initial-buffer-choice t)
-;(run-with-timer 1 nil #'(lambda () (bury-buffer)))  ;; 此处配置会导致message为首页buffer,暂时注销
 
 ;; 增加长行处理性能
 (setq bidi-inhibit-bpa t)
@@ -11,7 +44,7 @@
 (setq read-process-output-max (* 1024 1024))
 
 (fset 'yes-or-no-p 'y-or-n-p)                        ;以 y/n代表 yes/no
-(set-face-attribute 'default nil :height 120)        ;设置字体大小
+(set-face-attribute 'default nil :height 160)        ;设置字体大小
 (blink-cursor-mode 1)                                ;光标闪动
 (set-cursor-color "#f08080")                         ;设置光标颜色
 (setq blink-cursor-interval 0.5)                     ;闪烁光标时间间隔
@@ -41,24 +74,16 @@
       scroll-conservatively 10000)
 
 ;; 不显示 *scratch*
-(defun remove-scratch-buffer ()
-  (if (get-buffer "*scratch*")
-      (kill-buffer "*scratch*")))
-(add-hook 'after-change-major-mode-hook 'remove-scratch-buffer)
+;;(defun remove-scratch-buffer ()
+;;  (if (get-buffer "*scratch*")
+;;      (kill-buffer "*scratch*")))
+;;(add-hook 'after-change-major-mode-hook 'remove-scratch-buffer)
 
-;; Don't ask me when close emacs with process is running
-; (defadvice save-buffers-kill-emacs (around no-query-kill-emacs activate)
-;   "Prevent annoying \"Active processes exist\" query when you quit Emacs."
-;   (require 'noflet)
-;   (noflet ((process-list ())) ad-do-it))
 
 ;; Don't ask me when kill process buffer
 (setq kill-buffer-query-functions
       (remq 'process-kill-buffer-query-function
             kill-buffer-query-functions))
-
-
-
 
 (setq browse-kill-ring-quit-action        ;设置退出动作
       (quote save-and-restore))           ;保存还原窗口设置
@@ -69,9 +94,9 @@ from tradition chinese to simple chinese" t)
 (custom-set-variables '(tramp-verbose 0)) ;设置tramp的响应方式, 关闭后不弹出消息
 (setq max-lisp-eval-depth 40000)          ;lisp最大执行深度
 (setq max-specpdl-size 10000)             ;最大容量
-(setq kill-ring-max 1024) ;用一个很大的 kill ring. 这样防止我不小心删掉重要的东西
-(setq mark-ring-max 1024) ;设置的mark ring容量
-(setq eval-expression-print-length nil) ;设置执行表达式的长度没有限制
+(setq kill-ring-max 1024)                 ;用一个很大的 kill ring. 这样防止我不小心删掉重要的东西
+(setq mark-ring-max 1024)                 ;设置的mark ring容量
+(setq eval-expression-print-length nil)   ;设置执行表达式的长度没有限制
 (setq eval-expression-print-level nil)  ;设置执行表达式的深度没有限制
 (auto-compression-mode 1)               ;打开压缩文件时自动解压缩
 (setq read-quoted-char-radix 16)        ;设置 引用字符 的基数
@@ -110,9 +135,22 @@ from tradition chinese to simple chinese" t)
               (not cl-functions)    ;`CL' 包中的运行时调用的函数
               )))
 ;(elf-setup-default)                     ;二进制文件默认用elf模式打开
-(setq echo-keystrokes 0.1)              ;加快快捷键提示的速度
-(tooltip-mode -1)                       ;不要显示任何 tooltips
+(setq echo-keystrokes 0.1)               ;加快快捷键提示的速度
+(tooltip-mode -1)                        ;不要显示任何 tooltips
 
+;; 开启像素级滚动
+(when (fboundp 'pixel-scroll-precision-mode)
+  (pixel-scroll-precision-mode))
+
+;; 自动补全括号
+(electric-pair-mode t)
+
+;; 打开自动保存
+(auto-save-mode 1)
+;; 自动保存当前访问的文件buffer
+(auto-save-visited-mode 1)
 
 
 (provide 'init-generic)
+
+;;; init-generic.el ends here

@@ -1,4 +1,4 @@
-;;; init-icon.el --- summary -*- lexical-binding: t -*-
+;;; init-rust.el --- summary -*- lexical-binding: t -*-
 
 ;; Author: kylinbachelor
 ;; Maintainer: None
@@ -26,15 +26,27 @@
 
 ;;; Commentary:
 
-;; 图标配置
+;; rust配置
 
 ;;; Code:
 
-(message "Welcome to init-icon!")
+(message "Welcome to rust!")
 
-(use-package all-the-icons
-  :if (display-graphic-p))
+(use-package rust-mode
+  :ensure t
+  :config
+  (setq rust-format-on-save t)
+  (add-hook 'rust-mode-hook #'racer-mode)
+  (add-hook 'racer-mode-hook #'eldoc-mode)
+  (add-hook 'racer-mode-hook #'company-mode)
+  (setq company-tooltip-align-annotations t)
+  (setq company-idle-delay 0.5)
+  (setq company-echo-delay 0.2)
+  (setq company-minimum-prefix-length 1)
+  (setq company-show-numbers t)
+  (setq company-tooltip-limit 20)
+  (setq company-backends (delete 'company-semantic company-backends)))
 
-(provide 'init-icon)
+(provide 'init-rust)
 
-;;; init-icon.el ends here
+;;; init-rust.el ends here

@@ -1,4 +1,36 @@
+;;; init-interactive.el --- summary -*- lexical-binding: t -*-
 
+;; Author: kylinbachelor
+;; Maintainer: None
+;; Version: 1.0
+;; Package-Requires: (dependencies)
+;; Homepage: homepage
+;; Keywords: keywords
+
+
+;; This file is not part of GNU Emacs
+
+;; This program is free software: you can redistribute it and/or modify
+;; it under the terms of the GNU General Public License as published by
+;; the Free Software Foundation, either version 3 of the License, or
+;; (at your option) any later version.
+
+;; This program is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+;; GNU General Public License for more details.
+
+;; You should have received a copy of the GNU General Public License
+;; along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+
+;;; Commentary:
+
+;; 交互配置，这里主要是命令交互配置的Helm
+
+;;; Code:
+
+(message "Welcome to init-interactive!")
 
 (use-package helm
   :ensure t
@@ -31,11 +63,15 @@
   (setq helm-imenu-fuzzy-match t)
   (setq helm-apropos-fuzzy-match t)
   (setq helm-lisp-fuzzy-completion t)
-  (setq helm-completion-in-region-fuzzy-match t)
+  (setq helm-completion-in-region-fuzzy-match t))
 
-  )
-
-
-
+(defun my/helm-split-window-middle ()
+  (interactive)
+  (let ((split-height-threshold 100))
+    (split-window-sensibly)
+    (other-window 1)
+    (switch-to-buffer "*Helm Completions*")))
 
 (provide 'init-interactive)
+
+;;; init-interactive.el ends here
