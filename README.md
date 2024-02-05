@@ -1,2 +1,1 @@
-# cool-emacs
-emacs config repository
+My name is kylinBachelor,this is my emacs config,include org,markdown,vue,web,js,rust,sql......
