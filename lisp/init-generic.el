@@ -143,7 +143,7 @@ from tradition chinese to simple chinese" t)
       `((buffer-file-name "%f" "%b")
         ,(format " - GNU Emacs %s" emacs-version)))
 
-;; 启动最大化
+;; 启动最大化 为什么不管用呢
 ;(setq initial-frame-alist (quote ((fullscreen . maximized))))
 (setq initial-frame-alist '((fullscreen . maximized)))
 
