@@ -73,17 +73,6 @@
 (setq scroll-step 1
       scroll-conservatively 10000)
 
-;; 不显示 *scratch*
-;;(defun remove-scratch-buffer ()
-;;  (if (get-buffer "*scratch*")
-;;      (kill-buffer "*scratch*")))
-;;(add-hook 'after-change-major-mode-hook 'remove-scratch-buffer)
-
-
-;; Don't ask me when kill process buffer
-(setq kill-buffer-query-functions
-      (remq 'process-kill-buffer-query-function
-            kill-buffer-query-functions))
 
 (setq browse-kill-ring-quit-action        ;设置退出动作
       (quote save-and-restore))           ;保存还原窗口设置
@@ -149,6 +138,15 @@ from tradition chinese to simple chinese" t)
 (auto-save-mode 1)
 ;; 自动保存当前访问的文件buffer
 (auto-save-visited-mode 1)
+
+(setq frame-title-format
+      `((buffer-file-name "%f" "%b")
+        ,(format " - GNU Emacs %s" emacs-version)))
+
+;; 启动最大化
+;(setq initial-frame-alist (quote ((fullscreen . maximized))))
+(setq initial-frame-alist '((fullscreen . maximized)))
+
 
 
 (provide 'init-generic)

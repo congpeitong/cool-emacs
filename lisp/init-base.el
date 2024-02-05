@@ -92,12 +92,6 @@
 ;; 设置等宽字体
 (set-face-attribute 'default nil :height 160)
 
-;; 设置后备字体
-(set-fontset-font t nil "Sarasa Term SC" nil 'prepend)
-(set-fontset-font t nil "Iosevka" nil 'prepend)
-(set-fontset-font t nil "Source Han Sans HW" nil 'append)
-(set-fontset-font t nil "Unifont" nil 'append)
-(set-fontset-font t nil "Symbols Nerd Font" nil 'append)
 
 
 (provide 'init-base)
