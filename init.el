@@ -1,7 +1,6 @@
 ;;; init.el --- summary -*- lexical-binding: t -*-
 
 ;; Author: kylinBachelor
-;; Maintainer: 
 ;; Version: version
 ;; Package-Requires: (dependencies)
 ;; Homepage: homepage
@@ -87,7 +86,7 @@
 (require 'init-org)
 ;; rust
 (require 'init-rust)
-;; java
+;; java 暂时未使用，Java太难配置了，先暂停一下
 ;(require 'init-java)
 ;; sql
 (require 'init-sql)
