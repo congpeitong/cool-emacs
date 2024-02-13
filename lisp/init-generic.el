@@ -30,7 +30,6 @@
 
 ;;; Code:
 
-(message "Welcome to init-generic!")
 
 ;; Restore emacs session.
 (setq initial-buffer-choice t)

@@ -30,8 +30,6 @@
 
 ;;; Code:
 
-(message "Welcome to tree dir!")
-
 (use-package treemacs
   :ensure t
   :defer t

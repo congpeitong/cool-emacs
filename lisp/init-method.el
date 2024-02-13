@@ -30,8 +30,6 @@
 
 ;;; Code:
 
-(message "Welcome to init-method.el!")
-
 ;; 计算中国农历的年份，用于org中
 (defun grass-emacs/calc-chinese-year (year)
   (let* ((cycle (/ (+ year 2637) 60.0))

@@ -30,8 +30,6 @@
 
 ;;; Code:
 
-(message "Welcome to init-complete!")
-
 (use-package company
   :ensure t
   :init (global-company-mode)

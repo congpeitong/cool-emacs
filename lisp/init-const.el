@@ -30,7 +30,6 @@
 
 ;;; Code:
 
-(message "Welcome to init-const!")
 
 ;; 检查语法是否开启
 (defconst *spell-check-support-enable* t)
@@ -65,6 +64,15 @@
 
 ;; 是否是 nixos/darwin 模块 使用
 (defconst *is-nix-module* (equal (getenv "GRASS_EMACS_ENV") "nix-module"))
+
+;; Dashboard logo路径
+(defconst *kylin-dashboard-logo* (expand-file-name
+                          (if nil "logo.png" "banner.txt")
+                          user-emacs-directory))
+;; Dashboard title
+(defconst *kylin-dashboard-title* "诸天气荡荡，吾道日兴隆")
+
+
 
 
 (provide 'init-const)

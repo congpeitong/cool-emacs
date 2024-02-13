@@ -30,8 +30,6 @@
 
 ;;; Code:
 
-(message "Welcome to window config!")
-
 (use-package ace-window
   :ensure t
   :config

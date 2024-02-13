@@ -30,8 +30,6 @@
 
 ;;; Code:
 
-(message "Welcome to vue config!")
-
 (use-package vue-mode
   :ensure t
   :mode "\\.vue\\'"

@@ -30,7 +30,6 @@
 
 ;;; Code:
 
-(message "Welcome to init-base!")
 
 ;; 关闭原生编译警告
 (setq native-comp-async-report-warnings-errors nil)

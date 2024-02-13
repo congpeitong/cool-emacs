@@ -28,8 +28,6 @@
 ;; 配置文件入口
 
 ;;; Code:
-
-(message "Welcome to init.el!")
 ;;; 配置文件的主目录
 (add-to-list 'load-path (expand-file-name *emacs-config-dir* user-emacs-directory))
 ;;; 加速配置
@@ -88,8 +86,8 @@
 (require 'init-rust)
 ;; java 暂时未使用，Java太难配置了，先暂停一下
 ;(require 'init-java)
-;; sql
-(require 'init-sql)
+;; sql 有警告正在查问题
+;(require 'init-sql)
 
 
 

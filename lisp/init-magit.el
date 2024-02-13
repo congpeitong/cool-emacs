@@ -30,8 +30,6 @@
 
 ;;; Code:
 
-(message "Welcome to init-magit!")
-
 (use-package magit
   :ensure t
   :commands (magit-status)

@@ -13,31 +13,32 @@
                          ("melpa-stable" . "http://stable.melpa.org/packages/")))
 
 ;; Initialize packages
-(unless (bound-and-true-p package--initialized) ; To avoid warnings in 27
-  (setq package-enable-at-startup nil)          ; To prevent initializing twice
-  (package-initialize))
+;(unless (bound-and-true-p package--initialized) ; To avoid warnings in 27
+;  (setq package-enable-at-startup nil)          ; To prevent initializing twice
+;  (package-initialize))
 
 ;; ================ Setup use-package start ===========================
 
+;; 激活配置
+(package-initialize)
+;; 如果use-package没装
 (unless (package-installed-p 'use-package)
+  ;; 更新本地缓存
   (package-refresh-contents)
+  ;; 安装它
   (package-install 'use-package))
+(require 'use-package)
+;; 让 use-package 永远按需安装软件包
+(setq use-package-always-ensure t)
 
-;; Should set before loading `use-package'
-(eval-and-compile
-  (setq use-package-always-ensure t)
-  (setq use-package-always-defer t)
-  (setq use-package-expand-minimally t)
-  (setq use-package-enable-imenu-support t))
+;; 之后就可以使用它了。
+;; 比如上文安装并 require better-defaults 的过程就可以简化为这一行：
+(use-package better-defaults)
+;; 1. 它会判断是否已安装。没有时才会更新 package 缓存并安装它
+;; 2. 它会自动 (require)
+;; 3. 它有很多配置项能让你控制每个环节，从而做到把和这个软件包有关的所
+;; 有配置写在一个闭包里。你可以去看它的文档，或者抄我下面的用例
 
-(eval-when-compile
-  (require 'use-package))
-
-(use-package auto-package-update
-  :init
-  (setq auto-package-update-delete-old-versions t
-        auto-package-update-hide-results t)
-  (defalias 'upgrade-packages #'auto-package-update-now))
 ;;=================setup use-package end================================
 
 

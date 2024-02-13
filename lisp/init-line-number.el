@@ -30,8 +30,6 @@
 
 ;;; Code:
 
-(message "Welcome to init-line-number!")
-
 (provide 'init-line-number)
 
 (setq line-number-display-limit large-file-warning-threshold)

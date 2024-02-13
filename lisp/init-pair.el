@@ -30,8 +30,6 @@
 
 ;;; Code:
 
-(message "Welcome to init-pair!")
-
 ;; 括号的多色彩
 (use-package rainbow-delimiters
   :ensure t

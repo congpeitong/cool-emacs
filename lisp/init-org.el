@@ -30,8 +30,6 @@
 
 ;;; Code:
 
-(message "Welcome to org-mode!")
-
 ;; 使用use-package安装和配置org-mode
 (use-package org
   :ensure t

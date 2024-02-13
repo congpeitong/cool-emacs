@@ -30,8 +30,6 @@
 
 ;;; Code:
 
-(message "Welcome to unicode config!")
-
 (when (fboundp 'set-charset-priority)
   (set-charset-priority 'unicode))
 (prefer-coding-system 'utf-8-unix)

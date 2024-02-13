@@ -30,8 +30,6 @@
 
 ;;; Code:
 
-(message "Welcome to SQL config!")
-
 (use-package sqlup-mode
   :ensure t
   :config

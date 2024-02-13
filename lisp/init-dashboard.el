@@ -30,16 +30,37 @@
 
 ;;; Code:
 
-(message "Welcome to init-dashboard!")
 
 (use-package dashboard
   :ensure t
   :init
-  (setq dashboard-startup-banner 'logo-kirin)
+  (setq dashboard-startup-banner (or *kylin-dashboard-logo* 'official)
+        dashboard-page-separator "\n\f\n"
+        dashboard-banner-logo-title (or *kylin-dashboard-title* "Welcome to Emacs,Enjoy....")
+        dashboard-path-style 'truncate-middle
+        dashboard-path-max-length 60
+        dashboard-center-content t
+        dashboard-show-shortcuts nil
+        dashboard-items '((recents  . 10)
+                          (bookmarks . 5)
+                          (projects . 5))
+        dashboard-set-file-icons nil
+        dashboard-item-names '(("Recent Files:" . "Recently opened files:")
+                             ("Agenda for today:" . "Today's agenda:")
+                             ("Agenda for the coming week:" . "Agenda:")))
+  
+  (dashboard-setup-startup-hook)
   :config
-  (dashboard-setup-startup-hook))
-
-
+  ;; Insert copyright
+  ;; @see https://github.com/emacs-dashboard/emacs-dashboard/issues/219
+  (defun my-dashboard-insert-copyright ()
+    "Insert copyright in the footer."
+    (when dashboard-set-footer
+      (dashboard-insert-center
+       (propertize (format "\nPowered by KylinBachelor, %s\n" (format-time-string "%Y"))
+                   'face 'font-lock-comment-face))))
+  (advice-add #'dashboard-insert-footer :after #'my-dashboard-insert-copyright)
+)
 
 (provide 'init-dashboard)
 

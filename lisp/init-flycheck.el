@@ -30,7 +30,6 @@
 
 ;;; Code:
 
-(message "Welcome to init-flycheck!")
 
 ;; 只在编程时使用
 

@@ -30,8 +30,6 @@
 
 ;;; Code:
 
-(message "Welcome to time config!")
-
 (use-package holidays
   :ensure nil
   :init

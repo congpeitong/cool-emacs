@@ -30,8 +30,6 @@
 
 ;;; Code:
 
-(message "Welcome to rust!")
-
 (use-package rust-mode
   :ensure t
   :config

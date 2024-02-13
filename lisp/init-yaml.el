@@ -30,7 +30,6 @@
 
 ;;; Code:
 
-(message "Welcome to yaml!")
 
 (use-package yaml-ts-mode
   :ensure nil

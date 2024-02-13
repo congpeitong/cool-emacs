@@ -30,8 +30,6 @@
 
 ;;; Code:
 
-(message "Welcome to init-markdown!")
-
 (use-package markdown-mode
   :ensure t
   :commands (markdown-mode gfm-mode)

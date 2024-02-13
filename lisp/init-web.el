@@ -30,8 +30,6 @@
 
 ;;; Code:
 
-(message "Welcome to web config!")
-
 (use-package emmet-mode
   :ensure t
   :hook html-mode

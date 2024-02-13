@@ -30,8 +30,6 @@
 
 ;;; Code:
 
-(message "Welcome to init-interactive!")
-
 (use-package helm
   :ensure t
   :demand t

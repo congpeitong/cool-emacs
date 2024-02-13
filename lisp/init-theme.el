@@ -30,8 +30,6 @@
 
 ;;; Code:
 
-(message "Welcome to theme config!")
-
 (use-package spacemacs-theme
   :ensure t
   :init

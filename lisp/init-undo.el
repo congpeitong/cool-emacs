@@ -30,8 +30,6 @@
 
 ;;; Code:
 
-(message "Welcome to undo config!")
-
 
 (use-package undo-tree
   :ensure t
