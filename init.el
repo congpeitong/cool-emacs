@@ -28,8 +28,7 @@
 ;; 配置文件入口
 
 ;;; Code:
-;;; 配置文件的主目录
-(add-to-list 'load-path (expand-file-name *emacs-config-dir* user-emacs-directory))
+
 ;;; 加速配置
 (require 'init-accelerate)
 ;; 常量配置
@@ -88,11 +87,6 @@
 ;(require 'init-java)
 ;; sql 有警告正在查问题
 ;(require 'init-sql)
-
-
-
-
-
 
 
 

@@ -35,16 +35,16 @@
   :ensure t
   :init
   (setq dashboard-startup-banner (or *kylin-dashboard-logo* 'official)
-        dashboard-page-separator "\n\f\n"
+        ;dashboard-page-separator "\n\f\n"
         dashboard-banner-logo-title (or *kylin-dashboard-title* "Welcome to Emacs,Enjoy....")
         dashboard-path-style 'truncate-middle
         dashboard-path-max-length 60
         dashboard-center-content t
-        dashboard-show-shortcuts nil
+        dashboard-show-shortcuts t
         dashboard-items '((recents  . 10)
                           (bookmarks . 5)
                           (projects . 5))
-        dashboard-set-file-icons nil
+        dashboard-set-file-icons t
         dashboard-item-names '(("Recent Files:" . "Recently opened files:")
                              ("Agenda for today:" . "Today's agenda:")
                              ("Agenda for the coming week:" . "Agenda:")))

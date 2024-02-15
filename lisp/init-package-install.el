@@ -12,11 +12,6 @@
                          ("melpa"  . "http://melpa.org/packages/")
                          ("melpa-stable" . "http://stable.melpa.org/packages/")))
 
-;; Initialize packages
-;(unless (bound-and-true-p package--initialized) ; To avoid warnings in 27
-;  (setq package-enable-at-startup nil)          ; To prevent initializing twice
-;  (package-initialize))
-
 ;; ================ Setup use-package start ===========================
 
 ;; 激活配置
