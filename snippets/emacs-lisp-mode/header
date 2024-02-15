@@ -1,0 +1,21 @@
+# -*- mode: snippet; -*-
+# contributor: kchenphy <https://www.github.com/kchenphy>
+# name: custom elisp package header
+# key: header
+# --
+;;; ${1:name}.el --- ${2:summary} -*- lexical-binding: t -*-
+
+;; Author: kylinBachelor
+;; Version: 1.0
+
+;;; Commentary:
+
+;; ${10:commentary}
+
+;;; Code:
+
+
+
+(provide '$1)
+
+;;; $1.el ends here

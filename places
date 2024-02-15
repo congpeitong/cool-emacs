@@ -1,0 +1,13 @@
+;;; -*- coding: utf-8; mode: lisp-data -*-
+(("d:/Program Files/Emacs/test.el" . 3589)
+ ("d:/Program Files/Emacs/emacs-29.1/share/emacs/29.1/lisp/loaddefs.el" . 235802)
+ ("c:/Users/congp/AppData/Roaming/.emacs.d/init.el" . 290)
+ ("c:/Users/congp/AppData/Roaming/.emacs.d/early-init.el" . 1130)
+ ("c:/Users/congp/AppData/Roaming/.emacs.d/lisp/init-modeline.el" . 497)
+ ("c:/Users/congp/AppData/Roaming/.emacs.d/lisp/init-window.el" . 1153)
+ ("c:/Users/congp/AppData/Roaming/.emacs.d/lisp/init-theme.el" . 1055)
+ ("c:/Users/congp/AppData/Roaming/.emacs.d/lisp/init-dashboard.el" . 1934)
+ ("d:/Program Files/Emacs/emacs-29.1/share/emacs/29.1/lisp/emacs-lisp/float-sup.el" . 1954)
+ ("d:/Program Files/Emacs/test2.el" . 97)
+ ("c:/Users/congp/AppData/Roaming/.emacs.d/.cache/treemacs-persist" . 54)
+ ("c:/Users/congp/AppData/Roaming/.emacs.d/lisp/init-package-install.el" . 646))
