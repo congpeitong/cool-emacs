@@ -26,51 +26,27 @@
 
 ;;; Commentary:
 
-;; 交互配置，这里主要是命令交互配置的Helm
+;; 交互配置，这里主要是命令交互配置
 
 ;;; Code:
+(use-package counsel
+  :ensure t)
 
-(use-package helm
+
+(use-package swiper
   :ensure t
-  :demand t
-  :bind (("M-x" . helm-M-x)
-         ("C-x C-f" . helm-find-files)
-         ("C-x b" . helm-buffers-list)
-         ("C-x r b" . helm-filtered-bookmarks)
-         ("C-c h" . helm-command-prefix))
+  :bind (("C-s" . swiper)
+         ("C-r" . swiper)
+         ("C-c C-r" . ivy-resume)
+         ("M-x" . counsel-M-x)
+         ("C-x C-f" . counsel-find-file))
   :config
-;  (setq helm-split-window-default-side 'left)
-  (setq helm-split-window-in-side-preference 0.2)
-  (setq helm-move-to-line-cycle-in-source nil)
-  (setq helm-ff-search-library-in-sexp t)
-  (setq helm-autoresize-mode t)
-  (setq helm-echo-input-in-header-line t)
-  (setq helm-display-header-line nil)
-  (setq helm-display-function-line nil)
-  (setq helm-display-source-in-header-line t)
-  (setq helm-source-names-using-frame nil)
-  (setq helm-candidate-number-limit 100)
-  (setq helm-idle-delay 0.01)
-  (setq helm-input-idle-delay 0.01)
-  (setq helm-quick-update t)
-  (setq helm-M-x-requires-pattern nil)
-  (setq helm-buffers-favorite-modes (quote (org-mode text-mode)))
-  (setq helm-buffers-fuzzy-matching t)
-  (setq helm-recentf-fuzzy-match t)
-  (setq helm-semantic-fuzzy-match t)
-  (setq helm-imenu-fuzzy-match t)
-  (setq helm-apropos-fuzzy-match t)
-  (setq helm-lisp-fuzzy-completion t)
-  (setq helm-completion-in-region-fuzzy-match t))
-
-(defun my/helm-split-window-middle ()
-  (interactive)
-  (let ((split-height-threshold 100))
-    (split-window-sensibly)
-    (other-window 1)
-    (switch-to-buffer "*Helm Completions*")))
-
-
+  (progn
+    (ivy-mode 1)
+    (setq ivy-use-virtual-buffers t)
+    (setq ivy-display-style 'fancy)
+    (setq enable-recursive-minibuffers t)
+    (define-key minibuffer-local-map (kbd "C-r") 'counsel-minibuffer-history)))
 
 ;; evil 模拟vim按键
 

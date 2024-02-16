@@ -1,10 +1,11 @@
 ;;; -*- lexical-binding: t; -*-
 ;; this is package manager document
-(require 'package)
+
 
 ;;; Install into separate package dirs for each Emacs version, to prevent bytecode incompatibility
 (setq package-user-dir (expand-file-name *emacs-package-user-dir* user-emacs-directory))
 
+(require 'package)
 ;;; Standard package repositories
 ;; Internet repositories for new packages.
 (setq package-archives '(("gnu"    . "http://elpa.gnu.org/packages/")
@@ -13,7 +14,6 @@
                          ("melpa-stable" . "http://stable.melpa.org/packages/")))
 
 ;; ================ Setup use-package start ===========================
-
 ;; 激活配置
 (package-initialize)
 ;; 如果use-package没装
